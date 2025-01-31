@@ -1,0 +1,305 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header, .h1 {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__buddy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white; 
+    padding-left: 100px;
+    margin: 10px;
+    width: 100px;
+    height: auto;
+}
+
+.header__buddy img {
+    border-radius: 15px;
+    border: solid 1px black;
+}
+
+.header__buddy--name {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.h1 {
+    font-size: 2rem;
+    color: white;
+    margin: 5px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0 0 3px #1c4246, 0 0 3px #182c2e, 0 0 4px #28484c, 0 0 5px #2b4548, 0 0 6px#163235, 0 0 7px #3bbdcb, 0 0 8px #0000ff;
+    animation: glowing-text 1.5s infinite alternate;
+}
+
+.header-image {
+    width: 50px;  
+    height: 50px; 
+    display: inline-block;
+}
+
+.header .mode {
+    position: absolute;
+    right: 20px; 
+    top: 50px;
+    transform: translateY(-50%);
+    background-color: black;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 10px;
+}
+
+.header .mode:hover {
+    background-color: #232121;
+}
+
+.character__container {
+    margin: 20px auto;
+    text-align: center;
+    color: white;
+}
+
+.character__image,
+.character__id,
+.character__films,
+.character__species {
+    display: none;
+}
+
+.character__image img {
+    width: 220px;  
+    height: auto;  
+    border-radius: 15px;
+    border: solid 1px black;
+}
+
+.character__name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.character__save, 
+.character__catch {
+    padding: 16px 20px;
+    margin-top: 20px;
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.mode::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent;  
+    border-radius: 10px;
+    background-image: linear-gradient(90deg, 
+        rgba(255, 0, 0, 0.8), 
+        rgba(0, 255, 0, 0.8), 
+        rgba(0, 0, 255, 0.8), 
+        rgba(255, 0, 255, 0.8)
+    );
+    background-size: 200% 200%;
+    background-clip: border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    z-index: -1; 
+    animation: glowing-border 4s linear infinite;
+}
+
+.character__save:hover::before, 
+.character__catch:hover::before, 
+.mode:hover::before {
+    background-position: 100% 100%;
+    box-shadow: 0 0 5px rgb(46, 158, 148); 
+}
+
+.character__save:hover, 
+.character__catch:hover {
+    background-color: rgb(46, 126, 137);
+    box-shadow: 0 0 10px rgb(8, 200, 234);
+}
+
+@keyframes glowing-text {
+    0% {
+        text-shadow: 0 0 2px #112527, 
+                     0 0 3px #0e2527, 
+                     0 0 2px #143b3f, 
+                     0 0 5px #3bbdcb, 
+                     0 0 6px #0f3438, 
+                     0 0 6px #3bbdcb, 
+                     0 0 60px #0000ff;
+    }
+    50% {
+        text-shadow: 0 0 2px #112527, 
+                     0 0 3px #0e2527, 
+                     0 0 2px #143b3f, 
+                     0 0 5px #3bbdcb, 
+                     0 0 6px #0f3438, 
+                     0 0 6px #3bbdcb, 
+                     0 0 60px #0000ff;
+    }
+    100% {
+        text-shadow: 0 0 2px #112527, 
+                     0 0 3px #0e2527,  
+                     0 0 2px #143b3f, 
+                     0 0 5px #3bbdcb, 
+                     0 0 6px #0f3438, 
+                     0 0 6px #3bbdcb, 
+                     0 0 60px #0000ff;
+    }
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+/* Media queries */
+@media screen and (max-width: 1024px) {
+    .header__buddy {
+        flex-direction: row;
+        padding-left: 10px;
+        text-align: left;
+    }
+
+    .header-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .h1 {
+        font-size: 1.8rem;
+    }
+
+    .character__container {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .character__name {
+        font-size: 22px;
+    }
+
+    .mode {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .character__save, .character__catch {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__buddy {
+        flex-direction: column;
+        text-align: center;
+        padding-left: 0;
+    }
+
+    .header-image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .h1 {
+        font-size: 1.6rem;
+    }
+
+    .character__container {
+        padding: 20px;
+        width: 100%;
+    }
+
+    .character__name {
+        font-size: 20px;
+    }
+
+    .mode {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .character__save, .character__catch {
+        font-size: 14px;
+        padding: 12px 16px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .header__buddy {
+        padding-left: 0;
+        margin-top: 10px;
+    }
+
+    .header .mode {
+        position: static; 
+        margin-top: 10px; 
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .header-image {
+        width: 35px;
+        height: 35px;
+    }
+
+    .h1 {
+        font-size: 1.4rem;
+    }
+
+    .character__container {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .character__name {
+        font-size: 18px;
+    }
+
+    .mode {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .character__save, .character__catch {
+        font-size: 12px;
+        padding: 10px 14px;
+    }
+}

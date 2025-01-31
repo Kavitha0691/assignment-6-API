@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Character</title>
+    <link rel="stylesheet" href="./styles/api.css">
+    <script src="./script/jquery-3.7.1.min.js"></script>
+    <script src="./script/api.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <img src="./images/droid.png" class="header-image" alt="startwar_droid">
+        <h1 class="h1">Star War Characters</h1>
+        <div class="header__buddy"> </div>
+        <button class="mode">Dark Mode</button>
+    </header>
+
+    <main>
+        <div class="character__container">
+            <h2 class="character__name"></h2>
+            <div class="character__image">
+                <img src="https://placekitten.com/200/200" alt="Character Image">
+            </div>
+            <p class="character__id"></p>
+            <p class="character__films"></p>
+            <p class="character__species"></p>
+            <button class="character__catch">Catch a Star Wars Character</button>        
+            <button class="character__save">Save as Buddy</button>  
+        </div>
+        
+        <p class="error-message"></p>
+    </main>
+</body>
+</html>
