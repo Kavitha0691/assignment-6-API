@@ -44,7 +44,13 @@ html, body {
     margin: 5px;
     font-weight: bold;
     text-align: center;
-    text-shadow: 0 0 3px #1c4246, 0 0 3px #182c2e, 0 0 4px #28484c, 0 0 5px #2b4548, 0 0 6px#163235, 0 0 7px #3bbdcb, 0 0 8px #0000ff;
+    text-shadow: 0 0 3px #1c4246, 
+                 0 0 3px #182c2e, 
+                 0 0 4px #28484c, 
+                 0 0 5px #2b4548, 
+                 0 0 6px#163235, 
+                 0 0 7px #3bbdcb, 
+                 0 0 8px #0000ff;
     animation: glowing-text 1.5s infinite alternate;
 }
 
